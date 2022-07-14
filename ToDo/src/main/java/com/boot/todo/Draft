@@ -1,0 +1,15 @@
+curl -i -X POST -H "Content-Type:application/json" --data "{\"description\":\"Read the Pro Spring Boot 2nd Edition Book\"}" http://localhost:8080/api/todo
+
+curl -i http://localhost:8080/api/todo
+
+curl -i -X PUT -H "Content-Type: application/json" --data "{\"description\":\"Take the dog and the cat for a walk\",\"id\":\"986164c9-2e88-4af5-b3fd-1253c8724116\"}" http://localhost:8080/api/todo
+
+http://localhost:8080/api/todo/986164c9-2e88-4af5-b3fd-1253c8724116
+
+curl -i -X PATCH http://localhost:8080/api/todo/986164c9-2e88-4af5-b3fd-1253c8724116
+
+http://localhost:8080/api/todo/986164c9-2e88-4af5-b3fd-1253c8724116
+
+curl -i -X DELETE http://localhost:8080/api/todo/986164c9-2e88-4af5-b3fd-1253c8724116
+
+curl -i -X POST -H "Content-Type: application/json" -d "{\"description":\"\"}" http://localhost:8080/api/todo
