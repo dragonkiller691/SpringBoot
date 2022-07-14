@@ -1,4 +1,4 @@
-//package com.example.simple;
+//package com.boot.simple;
 //
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
