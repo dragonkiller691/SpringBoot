@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 
 @Repository
 public class ToDoRepository implements CommonRepository<ToDo> {
-
     private final Map<String, ToDo> toDos = new HashMap<>();
 
     @Override

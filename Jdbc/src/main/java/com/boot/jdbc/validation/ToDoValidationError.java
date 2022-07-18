@@ -1,4 +1,4 @@
-package com.boot.todo.validation;
+package com.boot.jdbc.validation;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -7,9 +7,8 @@ import java.util.List;
 
 /**
  * Created by Dmytro Honchar
- * Date: 7/14/2022
+ * Date: 7/18/2022
  */
-
 public class ToDoValidationError {
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private final List<String> errors = new ArrayList<>();

@@ -1,13 +1,12 @@
-package com.boot.todo.repository;
+package com.boot.jdbc.repository;
 
 import java.util.Collection;
 
 /**
  * Created by Dmytro Honchar
- * Date: 7/14/2022
+ * Date: 7/18/2022
  */
-
-public interface CommonRepository<T> {
+public interface  CommonRepository<T> {
     public T save(T domain);
 
     public Iterable<T> save(Collection<T> domains);

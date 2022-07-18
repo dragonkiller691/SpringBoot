@@ -6,6 +6,7 @@ import com.boot.todo.repository.CommonRepository;
 import com.boot.todo.validation.ToDoValidationError;
 import com.boot.todo.validation.ToDoValidationErrorBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
@@ -29,7 +30,7 @@ public class ToDoController {
         this.repository = repository;
     }
 
-    @GetMapping("/todo") // equivalent of @RequestMapping(value="/todo", method = {RequestMethod.GET}).
+    @GetMapping("/todo")
     public ResponseEntity<Iterable<ToDo>> getToDos() {
         return ResponseEntity.ok(repository.findAll());
     }
@@ -39,7 +40,7 @@ public class ToDoController {
         return ResponseEntity.ok(repository.findById(id));
     }
 
-    @PatchMapping("/todo/{id}") // equivalent of @RequestMapping(method = {RequestMethod.PATCH})
+    @PatchMapping("/todo/{id}")
     public ResponseEntity<ToDo> setCompleted(@PathVariable String id) {
         ToDo result = repository.findById(id);
         result.setCompleted(true);
@@ -77,7 +78,7 @@ public class ToDoController {
 
     @ExceptionHandler
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public ToDoValidationError handleException(Exception exception) {
+    public ToDoValidationError handleException(DataAccessException exception) {
         return new ToDoValidationError(exception.getMessage());
     }
 }

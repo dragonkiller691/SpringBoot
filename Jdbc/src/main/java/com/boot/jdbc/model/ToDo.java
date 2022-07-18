@@ -1,8 +1,7 @@
-package com.boot.todo.domain;
+package com.boot.jdbc.model;
+
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -10,13 +9,9 @@ import java.util.UUID;
  * Created by Dmytro Honchar
  * Date: 7/14/2022
  */
-
 @Data
 public class ToDo {
-    @NotNull
     private String id;
-    @NotNull
-    @NotBlank
     private String description;
     private LocalDateTime created;
     private LocalDateTime modified;

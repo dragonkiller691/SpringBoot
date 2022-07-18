@@ -1,10 +1,9 @@
-package com.boot.todo.domain;
+package com.boot.jdbc.model;
 
 /**
  * Created by Dmytro Honchar
- * Date: 7/14/2022
+ * Date: 7/18/2022
  */
-
 public class ToDoBuilder {
     private static final ToDoBuilder instance = new ToDoBuilder();
     private String id = null;
